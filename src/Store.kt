@@ -10,4 +10,5 @@ abstract class Store(val city: String) {
             println("Такой модели нет в наличии.")
         }
     }
+    abstract fun offerRepair(): Boolean
 }
