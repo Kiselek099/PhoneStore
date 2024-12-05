@@ -11,4 +11,12 @@ abstract class Store(val city: String) {
         }
     }
     abstract fun offerRepair(): Boolean
+    fun showStatistics() {
+        println("Статистика продаж:")
+        sales.forEach { (model, count) ->
+            println("- $model: $count шт.")
+        }
+        val totalRevenue = sales.map { (model, count) -> phones[model]!! * count }.sum()
+        println("Общая сумма покупок: $totalRevenue руб.")
+    }
 }
